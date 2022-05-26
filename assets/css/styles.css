@@ -9,50 +9,23 @@ body {
 body {
   display: flex;
   flex-direction: column;
-
 }
 
 .header {
+  background-color: rgba(202, 170, 170, 0.8);
   height: 75px;
-  padding: 12px;
-
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-
-  
 }
 
 .content {
-  /* absorb any extra space along the main axis */
-  flex: auto;
   background-color: #ccc;
+  flex: auto;
   margin: auto;
   max-width: 650px;
 }
 
 .footer {
+  background-color: rgba(202, 170, 170, 0.8);
   height: 25px;
 }
-
- 
-/* (2) Weisses Formilar Panel mittig zentriert */
-.formPanel {
-  background-color: white;
-  display: grid;
-  grid-row-gap: 8px;
-  padding: 12px;
-  width: 300px;
-  margin:auto;
-}
-
-.title {
-  text-align: center;
-}
-
- 
-
-/* Für Debugging
-* {
-  border: 1px solid blue;
-}
- */
