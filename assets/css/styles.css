@@ -9,21 +9,16 @@ body {
 body {
   display: flex;
   flex-direction: column;
-
 }
 
 .header {
   height: 75px;
   padding: 12px;
-
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-
-  
 }
 
 .content {
-  /* absorb any extra space along the main axis */
   flex: auto;
   background-color: #ccc;
   margin: auto;
@@ -35,7 +30,6 @@ body {
 }
 
  
-/* (2) Weisses Formilar Panel mittig zentriert */
 .formPanel {
   background-color: white;
   display: grid;
@@ -48,11 +42,3 @@ body {
 .title {
   text-align: center;
 }
-
- 
-
-/* Für Debugging
-* {
-  border: 1px solid blue;
-}
- */
