@@ -37,6 +37,9 @@ body {
   left: 550px;
   background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/rock.png?raw=true");
   background-size: cover;
+}
+
+.rock-animation {
   animation: rock 1.33s infinite;
 }
 
@@ -77,6 +80,9 @@ body {
   height: 300px;
   background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/background.jpg?raw=true");
   background-size: cover;
+}
+
+.bg-animation {
   animation: moveBg 10.33s linear infinite;
 }
 
