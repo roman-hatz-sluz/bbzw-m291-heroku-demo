@@ -2,24 +2,23 @@ const dino = document.getElementById("dino")
 const rock = document.getElementById("rock")
 const score = document.getElementById("score")
 const highscore = document.getElementById("highscore-value")
+const gameContainer = document.getElementById("game")
 const background = document.getElementById("background")
-const startGameButton = document.getElementById("startGame")
-let gameLoopInteral = 0;
 
-startGameButton.addEventListener("click", (event) => {
-  startGame()
-})
+let gameLoopInterval = 0
 
 const startGame = () => {
-  background.classList.add("bg-animation");
-  rock.classList.add("rock-animation");
+  background.classList.add("bg-animation")
+  rock.classList.add("rock-animation")
+  gameContainer.classList.remove("game-disabled")
   startGameLoop()
 }
 
 const stopGame = () => {
-  background.classList.remove("bg-animation");
-  rock.classList.remove("rock-animation");
-  clearInterval(gameLoopInteral)
+  background.classList.remove("bg-animation")
+  rock.classList.remove("rock-animation")
+  gameContainer.classList.add("game-disabled")
+  gameLoopInterval = clearInterval(gameLoopInterval)
 }
 
 const resetScore = () => {
@@ -45,14 +44,21 @@ const die = () => {
   }, 500)
 }
 
-document.addEventListener('keypress', (event) => {
-  if (!dino.classList.contains('jump-animation')) {
-    jump()
+document.addEventListener('click', (event) => {
+  console.log(gameLoopInterval)
+  if (!gameLoopInterval) {
+    startGame()
   }
+  else {
+    if (!dino.classList.contains('jump-animation')) {
+      jump()
+    }
+  }
+
 })
 
 const startGameLoop = () => {
-  gameLoopInteral = window.setInterval(() => {
+  gameLoopInterval = window.setInterval(() => {
     const dinoTop = parseInt(window.getComputedStyle(dino)
       .getPropertyValue('top'))
     const rockLeft = parseInt(window.getComputedStyle(rock)

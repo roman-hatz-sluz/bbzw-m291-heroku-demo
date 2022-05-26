@@ -3,10 +3,13 @@ body {
 }
 
 #score,
-.highscore {
+.highscore, .gameInfo {
   text-align: center;
   font-size: 2rem;
   margin-top: 20px;
+}
+.gameInfo {
+  font-size: 1rem;
 }
 
 #game {
@@ -14,6 +17,10 @@ body {
   height: 300px;
   border: 2px solid black;
   margin: auto;
+}
+
+.game-disabled {
+  opacity: 0.3; 
 }
 
 #dino {
@@ -95,3 +102,4 @@ body {
     background-position: -600px 0;
   }
 }
+ 
