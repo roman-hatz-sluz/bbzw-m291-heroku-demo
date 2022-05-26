@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header {
+  height: 75px;
+  padding: 12px;
+
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+
+  
+}
+
+.content {
+  /* absorb any extra space along the main axis */
+  flex: auto;
+  background-color: #ccc;
+  margin: auto;
+  max-width: 650px;
+}
+
+.footer {
+  height: 25px;
+}
+
+ 
+/* (2) Weisses Formilar Panel mittig zentriert */
+.formPanel {
+  background-color: white;
+  display: grid;
+  grid-row-gap: 8px;
+  padding: 12px;
+  width: 300px;
+  margin:auto;
+}
+
+.title {
+  text-align: center;
+}
+
+ 
+
+/* Für Debugging
+* {
+  border: 1px solid blue;
+}
+ */
