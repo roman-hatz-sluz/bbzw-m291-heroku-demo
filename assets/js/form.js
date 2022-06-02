@@ -1,6 +1,23 @@
 const submit = document.getElementById("submit")
+const email = document.getElementById("email")
+submit.disabled = true
 
-submit.addEventListener("click", (event) => {
+const validate = () => {
+    if (email.value == "") {
+        submit.disabled = true
+    } else {
+        submit.disabled = false
+    }
+}
+
+email.addEventListener("keyup", (event) => {
+    validate()
+})
+
+
+// neue Validierung beim Submit
+submit.addEventListener("click", async (event) => {
     event.preventDefault()
-    location.href ="./game.html"
+    databaseClient.insertInto("user", ["email"], [email.value])
+    location.href = "./game.html"
 })
