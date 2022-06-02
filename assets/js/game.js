@@ -77,9 +77,9 @@ const startGameLoop = () => {
     if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
       die()
       gameOver.style.display = "block";
-     
+
       stopGame()
-      
+
     }
   }, 50)
 

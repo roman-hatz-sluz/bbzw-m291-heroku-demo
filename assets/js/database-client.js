@@ -29,17 +29,15 @@ const databaseClient = {
     })
     const result = await response.json()
     console.log("SQL Query executed: ", result, sql)
-    if (result.error) {
-      alert("Datenbank Fehler: " + JSON.stringify(result.error, null, 2))
-    }
+    
     return result
   },
 
   // Mitgegeben wird der Name der Tabelle als String, die Felder als Array und die Werte als Array.
   // Beispiel: databaseClient.insertInto("customers", ["firstname", "email"], [firstname.value, email.value])
-  insertInto: (tableName = "users", fields = ["email"], values = []) => {
+  insertInto: async (tableName = "users", fields = ["email"], values = []) => {
     const sql = `INSERT INTO ${tableName} (${fields.join(",")}) VALUES ("${values.join(",")}")`
-    return databaseClient.executeSqlQuery(sql)
+    return await databaseClient.executeSqlQuery(sql)
   }
 
 }

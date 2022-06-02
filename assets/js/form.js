@@ -15,9 +15,15 @@ email.addEventListener("keyup", (event) => {
 })
 
 
-// neue Validierung beim Submit
 submit.addEventListener("click", async (event) => {
     event.preventDefault()
-    databaseClient.insertInto("user", ["email"], [email.value])
-    location.href = "./game.html"
+    const result = await databaseClient.insertInto("users", ["email"], [email.value])
+    if (result.error) {
+        alert("Datenbank Fehler: " + JSON.stringify(result.error, null, 2))
+    }
+    else {
+        // Weiterleitung auf die Game Page  
+        location.href = "./game.html"
+    }
+
 })
