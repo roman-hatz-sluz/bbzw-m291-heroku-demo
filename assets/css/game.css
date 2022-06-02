@@ -3,12 +3,12 @@ body {
 }
 
 #score,
-.highscore, .gameInfo {
+.highscore, .gameInfo, .gameOver {
   text-align: center;
   font-size: 2rem;
   margin-top: 20px;
 }
-.gameInfo {
+.gameInfo, .gameOver {
   font-size: 1rem;
 }
 
@@ -21,6 +21,7 @@ body {
 
 .game-disabled {
   opacity: 0.3; 
+  filter: brightness(0.5);
 }
 
 #dino {
@@ -102,4 +103,4 @@ body {
     background-position: -600px 0;
   }
 }
- 
+

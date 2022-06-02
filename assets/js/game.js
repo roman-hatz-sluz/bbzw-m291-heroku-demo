@@ -4,13 +4,16 @@ const score = document.getElementById("score")
 const highscore = document.getElementById("highscore-value")
 const gameContainer = document.getElementById("game")
 const background = document.getElementById("background")
+const gameOver = document.getElementById("gameOver")
 
 let gameLoopInterval = 0
 
 const startGame = () => {
+  gameOver.style.display = "none";
   background.classList.add("bg-animation")
   rock.classList.add("rock-animation")
   gameContainer.classList.remove("game-disabled")
+  resetScore()
   startGameLoop()
 }
 
@@ -45,7 +48,6 @@ const die = () => {
 }
 
 document.addEventListener('click', (event) => {
-  console.log(gameLoopInterval)
   if (!gameLoopInterval) {
     startGame()
   }
@@ -74,8 +76,10 @@ const startGameLoop = () => {
 
     if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
       die()
-      resetScore()
+      gameOver.style.display = "block";
+     
       stopGame()
+      
     }
   }, 50)
 
