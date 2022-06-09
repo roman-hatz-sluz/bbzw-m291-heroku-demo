@@ -5,6 +5,7 @@ const highscore = document.getElementById("highscore-value")
 const gameContainer = document.getElementById("game")
 const background = document.getElementById("background")
 const gameOver = document.getElementById("gameOver")
+const startScreen = document.getElementById("startScreen")
 
 let gameLoopInterval = 0
 
@@ -12,24 +13,14 @@ const startGame = () => {
   gameOver.style.display = "none";
   background.classList.add("bg-animation")
   rock.classList.add("rock-animation")
-  gameContainer.classList.remove("game-disabled")
+  startScreen.style.display = "none"
   resetScore()
   startGameLoop()
 }
 
-const stopGame = () => {
-  background.classList.remove("bg-animation")
-  rock.classList.remove("rock-animation")
-  gameContainer.classList.add("game-disabled")
-  gameLoopInterval = clearInterval(gameLoopInterval)
-}
+
 
 const resetScore = () => {
-  const scoreNumber = parseInt(score.innerText)
-  const highscoreNumber = parseInt(highscore.innerText)
-  if (scoreNumber > highscoreNumber) {
-    highscore.innerText = scoreNumber
-  }
   score.innerText = 0
 }
 
@@ -40,11 +31,13 @@ const jump = () => {
   }, 500)
 }
 
-const die = () => {
+const dieAnimation = () => {
   dino.classList.add("dino-dies")
-  setTimeout(() => {
+  return new Promise(resolve => setTimeout(() => {
     dino.classList.remove("dino-dies")
-  }, 500)
+    resolve()
+  }, 500));
+
 }
 
 document.addEventListener('click', (event) => {
@@ -58,6 +51,20 @@ document.addEventListener('click', (event) => {
   }
 
 })
+
+const stopGame = async () => {
+  await dieAnimation()
+  const scoreNumber = Number(score.innerText)
+  const highscoreNumber = Number(highscore.innerText)
+  if (scoreNumber > highscoreNumber) {
+    highscore.innerText = scoreNumber
+    gameOver.style.display = "block";
+  }
+  background.classList.remove("bg-animation")
+  rock.classList.remove("rock-animation")
+  startScreen.style.display = "block"
+  gameLoopInterval = clearInterval(gameLoopInterval)
+}
 
 const startGameLoop = () => {
   gameLoopInterval = window.setInterval(() => {
@@ -75,11 +82,7 @@ const startGameLoop = () => {
     }
 
     if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
-      die()
-      gameOver.style.display = "block";
-
       stopGame()
-
     }
   }, 50)
 

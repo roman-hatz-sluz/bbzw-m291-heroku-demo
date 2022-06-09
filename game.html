@@ -43,25 +43,37 @@
 
   </div>
 
-  <div class="content">
-    <div class="gameInfo">
-      Click to start the game.<br>
-      Click to jump.
+  <div class="content content-game">
+
+
+
+    <div class="gameRow gameInfo">
+      Weichen Sie den Hindernissen aus.
+      Klicken Sie, um zu springen.
     </div>
 
-    <div id="game" class="game-disabled">
+
+    <div id="game">
+      <div class="startScreen" id="startScreen">
+        <div class="startScreenText">
+          Klicken Sie, um das Spiel zu starten.
+        </div>
+      </div>
+
       <div id="background"></div>
       <div id="dino"></div>
       <div id="rock"></div>
     </div>
-    <div id="score">0</div>
-    <div class="highscore">
+
+
+    <div class="gameRow score" id="score">0</div>
+    <div class="gameRow highscore">
       Highscore <span id="highscore-value">0</span>
     </div>
 
-    <div class="gameOver" id="gameOver">
-      Glückwunsch, Sie haben einen Preis gewonnen!<br>
-      <a href="./shop.html">Link zum Shop</a>
+    <div class="gameRow gameOver" id="gameOver">
+      Glückwunsch, Sie haben einen neuen Highscore erzielt!<br>
+      Besuchen Sie unseren <a href="./shop.html">Shop</a> und lösen Sie ihren Gewinn ein.
     </div>
 
 
