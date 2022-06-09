@@ -95,7 +95,6 @@ const startGameLoop = () => {
     }
 
     if (goodieLeft < 50 && goodieLeft > 0 && dinoTop > 150) {
-      console.log("got goodie")
       goodie.style.display = 'none'
       goodiesCollected.innerText = Number(goodiesCollected.innerText) + 1
     }
