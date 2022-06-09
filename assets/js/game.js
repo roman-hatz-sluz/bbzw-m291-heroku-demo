@@ -66,10 +66,20 @@ const stopGame = async () => {
   background.classList.remove("bg-animation")
   rock.classList.remove("rock-animation")
   goodie.classList.remove("goodie-animation")
-  
+
   startScreen.style.display = "block"
   gameLoopInterval = clearInterval(gameLoopInterval)
 }
+
+const setGoodiePosition = (goodieLeft) => {
+  const max = 3;
+  const min = 1;
+  const random = Math.floor(Math.random() * (max - min + 1) + min);
+  if (goodieLeft === 550) {
+    goodie.style.animationName = "goodie" + random;
+  }
+};
+
 
 const startGameLoop = () => {
   gameLoopInterval = window.setInterval(() => {
@@ -77,10 +87,14 @@ const startGameLoop = () => {
       .getPropertyValue('top'))
     const rockLeft = parseInt(window.getComputedStyle(rock)
       .getPropertyValue('left'))
-      const goodieLeft = parseInt(window.getComputedStyle(goodie)
+    const goodieLeft = parseInt(window.getComputedStyle(goodie)
       .getPropertyValue('left'))
+    const goodieTop = parseInt(window.getComputedStyle(goodie)
+      .getPropertyValue('top'))
 
     score.innerText = Number(score.innerText) + 1
+
+    setGoodiePosition(goodieLeft)
 
     if (rockLeft < 0) {
       rock.style.display = 'none'
@@ -94,7 +108,7 @@ const startGameLoop = () => {
       goodie.style.display = ''
     }
 
-    if (goodieLeft < 50 && goodieLeft > 0 && dinoTop > 150) {
+    if (goodieLeft < 50 && dinoTop < (goodieTop + 50)) {
       goodie.style.display = 'none'
       goodiesCollected.innerText = Number(goodiesCollected.innerText) + 1
     }
