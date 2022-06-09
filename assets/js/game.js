@@ -66,6 +66,16 @@ const stopGame = async () => {
   gameLoopInterval = clearInterval(gameLoopInterval)
 }
 
+const setObstacleSpeed = (score, rockLeft) => {
+  let rockSpeed = 2000 // Milliseconds
+  rockSpeed = rockSpeed - score
+  if (rockLeft === 550) {
+    rock.style["-webkit-animation-duration"] = rockSpeed + "ms";
+  }
+
+}
+
+
 const startGameLoop = () => {
   gameLoopInterval = window.setInterval(() => {
     const dinoTop = parseInt(window.getComputedStyle(dino)
@@ -74,6 +84,9 @@ const startGameLoop = () => {
       .getPropertyValue('left'))
 
     score.innerText = Number(score.innerText) + 1
+
+    setObstacleSpeed(Number(score.innerText), rockLeft)
+
 
     if (rockLeft < 0) {
       rock.style.display = 'none'

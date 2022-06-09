@@ -40,7 +40,7 @@ body {
 }
 
 .rock-animation {
-  animation: rock 1.33s infinite;
+  animation: rock 2.33s infinite;
 }
 
 @keyframes rock {
