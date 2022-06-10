@@ -25,6 +25,7 @@ const startGame = () => {
 
 const resetScore = () => {
   score.innerText = 0
+  goodiesCollected.innerText = 0
 }
 
 const jump = () => {
@@ -71,7 +72,7 @@ const stopGame = async () => {
   gameLoopInterval = clearInterval(gameLoopInterval)
 }
 
-const setGoodiePosition = (goodieLeft) => {
+const randomizeGoodieAnimation = (goodieLeft) => {
   const max = 3;
   const min = 1;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -94,7 +95,7 @@ const startGameLoop = () => {
 
     score.innerText = Number(score.innerText) + 1
 
-    setGoodiePosition(goodieLeft)
+    randomizeGoodieAnimation(goodieLeft)
 
     if (rockLeft < 0) {
       rock.style.display = 'none'
