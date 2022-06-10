@@ -68,7 +68,7 @@ const stopGame = async () => {
 
 const setObstacleSpeed = (score, rockLeft) => {
   let rockSpeed = 2000 // Milliseconds
-  rockSpeed = rockSpeed - score
+  rockSpeed = rockSpeed - (score * 2)
   if (rockLeft === 550) {
     rock.style["-webkit-animation-duration"] = rockSpeed + "ms";
   }
