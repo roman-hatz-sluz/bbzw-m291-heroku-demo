@@ -1,0 +1,149 @@
+body {
+  font-family: "Courier";
+}
+
+.content-game {
+  min-height: 600px;
+  font-size: 1.5rem;
+}
+
+#game {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  border: 2px solid black;
+  margin: auto;
+}
+
+#dino {
+  height: 75px;
+  width: 75px;
+  top: 225px;
+  position: relative;
+  background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/dino.png?raw=true");
+  background-size: cover;
+}
+
+.dino-dies {
+  background-color: red;
+}
+
+#rock {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 175px;
+  left: 550px;
+  background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/rock.png?raw=true");
+  background-size: cover;
+}
+
+.rock-animation {
+  -webkit-animation: rock 1.33s infinite;
+  animation: rock 1.33s infinite;
+}
+
+@-webkit-keyframes rock {
+  0% {
+    left: 550px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+@keyframes rock {
+  0% {
+    left: 550px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+.jump-animation {
+  -webkit-animation: jump 0.5s;
+  animation: jump 0.5s;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    top: 225px;
+  }
+  50% {
+    top: 75px;
+  }
+  75% {
+    top: 75px;
+  }
+  100% {
+    top: 225px;
+  }
+}
+@keyframes jump {
+  0% {
+    top: 225px;
+  }
+  50% {
+    top: 75px;
+  }
+  75% {
+    top: 75px;
+  }
+  100% {
+    top: 225px;
+  }
+}
+#background {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/background.jpg?raw=true");
+  background-size: cover;
+}
+
+.bg-animation {
+  -webkit-animation: moveBg 10.33s linear infinite;
+  animation: moveBg 10.33s linear infinite;
+}
+
+@-webkit-keyframes moveBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -600px 0;
+  }
+}
+@keyframes moveBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -600px 0;
+  }
+}
+.gameRow {
+  text-align: center;
+  margin-top: 20px;
+  padding: 8px;
+}
+
+.gameOver {
+  display: none;
+}
+
+.startScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0.7;
+  background: black;
+}
+
+.startScreenText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;
+}

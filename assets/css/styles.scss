@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 75px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+.content {
+  flex: auto;
+  background-color: #ccc;
+  margin: auto;
+  max-width: 650px;
+}
+
+.footer {
+  height: 25px;
+}
+
+ 
+.formPanel {
+  background-color: white;
+  display: grid;
+  grid-row-gap: 8px;
+  padding: 12px;
+  width: 300px;
+  margin:auto;
+}
+
+.title {
+  text-align: center;
+}
