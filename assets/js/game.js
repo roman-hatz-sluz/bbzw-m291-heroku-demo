@@ -1,3 +1,5 @@
+import "./../css/game.scss"
+
 const dino = document.getElementById("dino")
 const rock = document.getElementById("rock")
 const score = document.getElementById("score")

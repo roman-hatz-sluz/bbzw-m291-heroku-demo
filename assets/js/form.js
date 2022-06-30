@@ -1,3 +1,5 @@
+import "./../css/styles.scss" 
+
 const submit = document.getElementById("submit")
 const email = document.getElementById("email")
 submit.disabled = true
