@@ -1,10 +1,10 @@
-Setup
+# Setup
 
-Open Terminal
+## Open Terminal
 - node -v (Install NodeJS if needed)
 - npm install
 - npm run start 
-Open another Terminal
+## Open another Terminal
 - npm run dev 
-Open Browser
+## Open Browser
 - http://localhost:3099/
