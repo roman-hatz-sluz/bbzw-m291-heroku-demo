@@ -2,8 +2,7 @@ const path = require("path");
 const outputPath = "public/";
 
 module.exports = (env = {}, argv) => {
-  const isProduction = argv.mode === "production";
-
+  
   let config = {
     context: path.resolve(__dirname, "./"),
     entry: {
