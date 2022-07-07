@@ -32,7 +32,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node index.js",
     "start-watch": "nodemon --watch",
     "build": "rm -rf public/*; node_modules/.bin/webpack --mode production",
     "dev": "rm -rf public/*; webpack --mode development --watch",

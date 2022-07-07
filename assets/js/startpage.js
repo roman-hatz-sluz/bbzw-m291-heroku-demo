@@ -1,4 +1,4 @@
-import "./../css/styles.scss" 
+import databaseClient from './database-client'
 
 const submit = document.getElementById("submit")
 const email = document.getElementById("email")

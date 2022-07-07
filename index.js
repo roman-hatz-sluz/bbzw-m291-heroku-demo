@@ -43,25 +43,13 @@ app.get("/", (request, response) => {
   const html = fs.readFileSync(__dirname + "/assets/html/index.html", "utf8");
   response.end(html);
 });
-/*
-app.get("/index.html", (request, response) => {
+
+app.get("/", (request, response) => {
   const html = fs.readFileSync(__dirname + "/assets/html/index.html", "utf8");
   response.end(html);
 });
 
-app.get("/game.html", (request, response) => {
-  const html = fs.readFileSync(__dirname + "/assets/html/game.html", "utf8");
-  response.end(html);
-});
-app.get("/shop.html", (request, response) => {
-  const html = fs.readFileSync(__dirname + "/assets/html/shop.html", "utf8");
-  response.end(html);
-});*/
-
-
-
-
-
+// DB Endpoint
 app.post("/sql", (request, response) => {
   const data = request.body;
 

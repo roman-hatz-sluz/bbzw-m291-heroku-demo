@@ -1,6 +1,4 @@
-import "./../css/game.scss"
-
-const dino = document.getElementById("dino")
+ const dino = document.getElementById("dino")
 const rock = document.getElementById("rock")
 const score = document.getElementById("score")
 const highscore = document.getElementById("highscore-value")

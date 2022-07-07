@@ -1,14 +1,12 @@
-/*
-Sie müssen nicht wissen, wie executeSqlQuery funktioniert. 
-Sie müssen nur wissen, wie Sie diesen Code verwenden können bei form.js. 
-*/
+// Beispiel für die Verwendung: 
+// databaseClient.insertInto("customers", ["firstname", "email"], [firstname.value, email.value])
 
 
 const databaseClient = {
-  // Account Daten
+  // Ihre Account Daten
   data: {
     url: "/sql",
-    pw: "37b46eb1",
+    pw: "08174d6b",
     sql: ""
   },
 
@@ -31,9 +29,10 @@ const databaseClient = {
   },
 
   // Mitgegeben wird der Name der Tabelle als String, die Felder als Array und die Werte als Array.
-  // Beispiel: databaseClient.insertInto("customers", ["firstname", "email"], [firstname.value, email.value])
-  insertInto: async (tableName = "users", fields = ["email"], values = []) => {
+  insertInto: async (tableName, fields, values) => {
     const sql = `INSERT INTO ${tableName} (${fields.join(",")}) VALUES ('${values.join("','")}')`
     return await databaseClient.executeSqlQuery(sql)
   }
 }
+
+export default databaseClient;

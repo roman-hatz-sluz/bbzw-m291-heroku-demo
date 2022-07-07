@@ -12,11 +12,7 @@ const execQuery = (sql = "", pw = "") => {
 
     const parsedConfig = parseDbUrl(process.env.DATABASE_URL);
     parsedConfig.multipleStatements = true;
-    const isValid = pw === parsedConfig.password;
-    if (!isValid) {
-      reject("invalid password");
-    }
-
+ 
     const connection = mysql.createConnection(parsedConfig);
     connection.connect();
     connection.on("error", (err) => {

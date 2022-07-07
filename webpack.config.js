@@ -7,8 +7,7 @@ module.exports = (env = {}, argv) => {
   let config = {
     context: path.resolve(__dirname, "./"),
     entry: {
-      script: ["./assets/js/form.js", "./assets/js/database-client.js"],
-      game: ["./assets/js/game.js"]
+      app: ["./assets/js/app.js"] 
     },
     output: {
       path: path.resolve(__dirname, outputPath),
