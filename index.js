@@ -52,9 +52,8 @@ app.get("/", (request, response) => {
 // DB Endpoint
 app.post("/sql", (request, response) => {
   const data = request.body;
-
-  if (data.sql && data.pw) {
-    DBClient.execQuery(data.sql, data.pw)
+  if (data.sql) {
+    DBClient.execQuery(data.sql)
       .then((res) => {
         response.setHeader("Content-Type", "application/json");
         response.end(JSON.stringify(res));
